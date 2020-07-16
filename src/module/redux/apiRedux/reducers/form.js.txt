@@ -1,0 +1,20 @@
+import { initState, actionCreater } from '../helper/utils';
+import { handleActions } from 'redux-actions';
+
+export const requestItems = [
+  {
+    apiVal:
+      'api주소를 입력해주세요. 양식 apiadress?state에 state에 저장하고 싶은 변수명("api/query/blocknum?HMblocknum")',
+    type: 'api 호출 type을 입력해주세요.',
+  },
+];
+const state = initState(requestItems);
+const createdReducer = actionCreater(requestItems);
+export const reducer = handleActions(createdReducer, state);
+
+/**
+ *  requestItem만 바꾸면 된다.
+ *  해당 파일을 추가한 다음 index.js 에 해당 파일을 import 시켜주고
+ *  apiReducers 의 object에 import 한 파일을 저장한다.
+ *
+ */
